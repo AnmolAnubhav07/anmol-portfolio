@@ -10,8 +10,7 @@ export default function Projects() {
           Selected work
         </h2>
         <p className="mt-3 max-w-xl text-muted">
-          A few things I&apos;ve been building. Descriptions below are
-          placeholders — swap them for your real write-ups in{" "}
+          A few things I&apos;ve been building. Descriptions below
           <code className="rounded bg-ink/[0.06] px-1.5 py-0.5 font-mono text-sm">
             src/lib/data.ts
           </code>

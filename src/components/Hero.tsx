@@ -117,7 +117,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="file-tag mb-6"
           >
-            hero.tsx
+            
           </motion.p>
 
           <motion.h1

@@ -28,7 +28,7 @@ export default function ResumeSection() {
         <div className="glass glow-edge flex flex-col items-center gap-6 rounded-3xl p-10 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
             <p className="file-tag mb-3 justify-center sm:justify-start">
-              resume.pdf
+              resume pdf
             </p>
             <h2 className="font-display text-2xl font-semibold sm:text-3xl">
               Want the short version?

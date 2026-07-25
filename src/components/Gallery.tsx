@@ -29,12 +29,12 @@ export default function Gallery() {
   return (
     <section id="gallery" className="relative border-t border-ink/[0.06] py-24">
       <div className="mx-auto max-w-5xl px-5">
-        <p className="file-tag mb-4">gallery.tsx</p>
+        <p className="file-tag mb-4">gallery</p>
         <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Gallery
         </h2>
         <p className="mt-3 max-w-xl text-muted">
-          Placeholder slides — drop your own project screenshots or photos
+          Placeholder slides — my photos and posts
           into <code className="rounded bg-ink/[0.06] px-1.5 py-0.5 font-mono text-sm">public/gallery</code> and
           swap the array in <code className="rounded bg-ink/[0.06] px-1.5 py-0.5 font-mono text-sm">data.ts</code>.
         </p>
