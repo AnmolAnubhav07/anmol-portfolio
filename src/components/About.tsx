@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section id="about" className="relative border-t border-ink/[0.06] py-24">
       <div className="mx-auto max-w-5xl px-5">
-        <p className="file-tag mb-4">about.tsx</p>
+        <p className="file-tag mb-4">about</p>
         <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           A bit about me
         </h2>

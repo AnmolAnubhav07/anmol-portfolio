@@ -35,8 +35,6 @@ export default function Gallery() {
         </h2>
         <p className="mt-3 max-w-xl text-muted">
           Placeholder slides — my photos and posts
-          into <code className="rounded bg-ink/[0.06] px-1.5 py-0.5 font-mono text-sm">public/gallery</code> and
-          swap the array in <code className="rounded bg-ink/[0.06] px-1.5 py-0.5 font-mono text-sm">data.ts</code>.
         </p>
 
         <div

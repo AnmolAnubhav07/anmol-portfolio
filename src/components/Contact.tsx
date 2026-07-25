@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative border-t border-ink/[0.06] py-24">
       <div className="mx-auto max-w-5xl px-5">
-        <p className="file-tag mb-4">contact.tsx</p>
+        <p className="file-tag mb-4">contact</p>
         <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Let&apos;s build something
         </h2>
