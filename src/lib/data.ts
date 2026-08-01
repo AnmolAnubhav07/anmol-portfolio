@@ -40,7 +40,7 @@ export const stats = [
   { label: "CGPA", value: 7.9, suffix: "" },
   { label: "Hackathons", value: 5, suffix: "+" },
   { label: "Projects Built", value: 4, suffix: "+" },
-  { label: "Technologies", value: 12, suffix: "+" },
+  { label: "Technologies", value: 20, suffix: "+" },
 ];
 
 export type SkillGroup = {
@@ -50,34 +50,28 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
+    category: "Languages",
+    skills: ["JavaScript", "TypeScript", "C", "SQL"],
+  },
+  {
     category: "Frontend",
-    skills: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+    skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
   },
   {
     category: "Backend",
-    skills: ["Supabase", "Firebase", "REST APIs", "Authentication"],
+    skills: ["Node.js", "Express.js", "REST APIs"],
   },
   {
     category: "Database",
-    skills: ["Supabase", "Firebase", "SQL"],
+    skills: ["Supabase", "Firebase"],
+  },
+  {
+    category: "AI",
+    skills: ["OpenAI API", "Gemini API"],
   },
   {
     category: "Tools",
     skills: ["Git", "GitHub", "VS Code", "Vercel"],
-  },
-  {
-    category: "AI",
-    skills: [
-      "Prompt Engineering",
-      "AI Automation",
-      "LLMs",
-      "AI Website Development",
-      "OpenAI APIs",
-    ],
-  },
-  {
-    category: "Other",
-    skills: ["Trading", "Problem Solving", "Freelancing"],
   },
 ];
 

@@ -152,24 +152,6 @@ button {
   transform: translateY(-3px);
 }
 
-/* Mono "file tag" eyebrow used above each section — the site's structural device */
-.file-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  color: rgb(var(--c-muted));
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.file-tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgb(var(--c-blue)), rgb(var(--c-violet)));
-}
-
 /* Gradient text used sparingly for key words only */
 .text-gradient {
   background: linear-gradient(
@@ -303,4 +285,18 @@ button {
 -------------------------------------------------------------------------- */
 .ken-burns-bg {
   animation: kenBurns 9s ease-in-out forwards;
+}
+
+/* -------------------------------------------------------------------------
+   Mobile performance: heavy backdrop-filter blur stacked across many glass
+   cards can cause scroll jank on lower-end phones — trim it down there.
+-------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .glass {
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+  .gradient-mesh {
+    filter: blur(26px);
+  }
 }

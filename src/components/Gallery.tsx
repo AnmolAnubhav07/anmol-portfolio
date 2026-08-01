@@ -29,16 +29,12 @@ export default function Gallery() {
   return (
     <section id="gallery" className="relative border-t border-ink/[0.06] py-24">
       <div className="mx-auto max-w-5xl px-5">
-        <p className="file-tag mb-4">gallery</p>
         <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Gallery
         </h2>
-        <p className="mt-3 max-w-xl text-muted">
-          Placeholder slides — my photos and posts
-        </p>
 
         <div
-          className="glass glow-edge relative mt-10 h-[380px] overflow-hidden rounded-3xl sm:h-[440px]"
+          className="glass glow-edge relative mt-10 h-[300px] overflow-hidden rounded-3xl sm:h-[440px]"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -88,7 +84,7 @@ export default function Gallery() {
             type="button"
             onClick={() => setIndex((i) => (i - 1 + count) % count)}
             aria-label="Previous slide"
-            className="glass absolute left-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-ink"
+            className="glass absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 sm:h-9 sm:w-9 items-center justify-center rounded-full text-ink"
           >
             <ChevronLeft size={16} />
           </button>
@@ -96,7 +92,7 @@ export default function Gallery() {
             type="button"
             onClick={() => setIndex((i) => (i + 1) % count)}
             aria-label="Next slide"
-            className="glass absolute right-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-ink"
+            className="glass absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 sm:h-9 sm:w-9 items-center justify-center rounded-full text-ink"
           >
             <ChevronRight size={16} />
           </button>

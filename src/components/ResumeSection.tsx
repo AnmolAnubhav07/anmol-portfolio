@@ -27,9 +27,6 @@ export default function ResumeSection() {
       <div className="mx-auto max-w-5xl px-5">
         <div className="glass glow-edge flex flex-col items-center gap-6 rounded-3xl p-10 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
-            <p className="file-tag mb-3 justify-center sm:justify-start">
-              resume pdf
-            </p>
             <h2 className="font-display text-2xl font-semibold sm:text-3xl">
               Want the short version?
             </h2>
@@ -74,26 +71,44 @@ export default function ResumeSection() {
               exit={{ opacity: 0, scale: 0.96, y: 10 }}
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              className="glass relative flex h-[85vh] w-full max-w-2xl flex-col rounded-2xl p-3"
+              className="glass relative flex h-[75vh] w-full max-w-2xl flex-col rounded-2xl p-3 sm:h-[85vh]"
             >
-              <div className="flex items-center justify-between px-2 pb-2">
+              <div className="flex items-center justify-between gap-3 px-2 pb-2">
                 <span id="resume-modal-title" className="font-mono text-xs text-muted">
                   {profile.name} — resume preview
                 </span>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close preview"
-                  className="glass flex h-8 w-8 items-center justify-center rounded-full text-ink"
-                >
-                  <X size={14} />
-                </button>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={profile.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden font-mono text-[0.68rem] text-muted underline decoration-dotted underline-offset-2 hover:text-ink sm:inline"
+                  >
+                    open in new tab
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    aria-label="Close preview"
+                    className="glass flex h-8 w-8 items-center justify-center rounded-full text-ink"
+                  >
+                    <X size={14} />
+                  </button>
+                </div>
               </div>
               <iframe
                 src={profile.resumeUrl}
                 title="Resume preview"
                 className="h-full w-full flex-1 rounded-xl bg-white"
               />
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 text-center font-mono text-xs text-blue-glow underline underline-offset-2 sm:hidden"
+              >
+                Not loading? Open in a new tab
+              </a>
             </motion.div>
           </motion.div>
         )}

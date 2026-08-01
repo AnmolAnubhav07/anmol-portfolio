@@ -90,14 +90,14 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden pt-28"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-24 sm:pt-28"
     >
       <div className="gradient-mesh" aria-hidden />
       <div className="grid-overlay bg-grid-pattern" aria-hidden />
       {PARTICLES.map((p, i) => (
         <span
           key={i}
-          className={`particle ${p.cls}`}
+          className={`particle ${p.cls} ${i >= 4 ? "hidden sm:block" : ""}`}
           style={{
             width: p.size,
             height: p.size,
@@ -109,22 +109,13 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-14 px-5 pb-20 md:grid-cols-[1.2fr_0.8fr] md:gap-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-10 px-5 pb-16 sm:gap-14 sm:pb-20 md:grid-cols-[1.2fr_0.8fr] md:gap-8">
         <div>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="file-tag mb-6"
-          >
-            
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl"
+            className="font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl"
           >
             {profile.name}
           </motion.h1>
@@ -133,7 +124,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-3 font-display text-xl text-muted sm:text-2xl"
+            className="mt-3 font-display text-lg text-muted sm:text-2xl"
           >
             <span className="text-gradient font-medium">{profile.role}</span>
             {" · "}
@@ -153,18 +144,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4"
           >
             <a
               href="#contact"
-              className="rounded-full bg-gradient-to-r from-blue-glow to-violet-glow px-6 py-3 font-mono text-sm font-medium text-white shadow-lg shadow-violet-glow/20 transition-transform hover:scale-[1.03]"
+              className="rounded-full bg-gradient-to-r from-blue-glow to-violet-glow px-5 py-2.5 font-mono text-sm font-medium text-white shadow-lg shadow-violet-glow/20 transition-transform hover:scale-[1.03] sm:px-6 sm:py-3"
             >
               Hire Me
             </a>
             <a
               href={profile.resumeUrl}
               download
-              className="glass glow-edge inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-sm text-ink"
+              className="glass glow-edge inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-mono text-sm text-ink sm:px-6 sm:py-3"
             >
               <Download size={14} /> Resume
             </a>
@@ -182,7 +173,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           style={{ perspective: 800 }}
-          className="mx-auto w-full max-w-[280px] md:mx-0"
+          className="mx-auto w-full max-w-[230px] sm:max-w-[280px] md:mx-0"
         >
           <motion.div
             style={{ rotateX: springRX, rotateY: springRY }}
@@ -208,14 +199,14 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mx-auto -mt-8 mb-4 grid w-full max-w-5xl grid-cols-2 gap-4 px-5 sm:grid-cols-4">
+      <div className="relative z-10 mx-auto -mt-4 mb-4 grid w-full max-w-5xl grid-cols-2 gap-3 px-5 sm:-mt-8 sm:gap-4 sm:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className="glass rounded-xl px-4 py-4 text-center">
-            <div className="font-display text-2xl font-semibold text-ink">
+          <div key={s.label} className="glass rounded-xl px-3 py-3 text-center sm:px-4 sm:py-4">
+            <div className="font-display text-xl font-semibold text-ink sm:text-2xl">
               {s.value}
               {s.suffix}
             </div>
-            <div className="mt-1 font-mono text-[0.68rem] uppercase tracking-wide text-muted">
+            <div className="mt-1 font-mono text-[0.62rem] uppercase tracking-wide text-muted sm:text-[0.68rem]">
               {s.label}
             </div>
           </div>

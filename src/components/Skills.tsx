@@ -7,7 +7,6 @@ export default function Skills() {
   return (
     <section id="skills" className="relative border-t border-ink/[0.06] py-24">
       <div className="mx-auto max-w-5xl px-5">
-        <p className="file-tag mb-4">skills</p>
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
             Toolshelf

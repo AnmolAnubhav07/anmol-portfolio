@@ -68,7 +68,7 @@ export default function VisitorCounter() {
   }
 
   return (
-    <div className="glass inline-flex items-center gap-4 rounded-full px-4 py-2 font-mono text-[0.7rem] text-muted">
+    <div className="glass inline-flex items-center gap-2.5 rounded-full px-3 py-2 font-mono text-[0.65rem] text-muted sm:gap-4 sm:px-4 sm:text-[0.7rem]">
       <span className="flex items-center gap-1.5">
         <Eye size={12} className="text-blue-glow" />
         <AnimatedNumber value={stats.total} /> total
