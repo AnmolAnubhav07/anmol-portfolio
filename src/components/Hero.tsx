@@ -109,7 +109,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-10 px-5 pb-16 sm:gap-14 sm:pb-20 md:grid-cols-[1.2fr_0.8fr] md:gap-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-5xl grid-cols-1 items-start gap-10 px-5 pb-16 sm:gap-14 sm:pb-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-8">
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -166,47 +166,67 @@ export default function Hero() {
               View Projects <ArrowDown size={14} />
             </a>
           </motion.div>
+
+          {/* Stats live inside the text column on mobile so they always sit
+              in plain document flow directly after the buttons — no separate
+              breakpoint-dependent grid, no negative margins, no gaps. */}
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-4 sm:gap-4 md:hidden">
+            {stats.map((s) => (
+              <div key={s.label} className="glass rounded-xl px-3 py-3 text-center sm:px-4 sm:py-4">
+                <div className="font-display text-xl font-semibold text-ink sm:text-2xl">
+                  {s.value}
+                  {s.suffix}
+                </div>
+                <div className="mt-1 font-mono text-[0.62rem] uppercase tracking-wide text-muted sm:text-[0.68rem]">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          style={{ perspective: 800 }}
-          className="mx-auto w-full max-w-[230px] sm:max-w-[280px] md:mx-0"
-        >
+        <div className="flex justify-center md:block">
           <motion.div
-            style={{ rotateX: springRX, rotateY: springRY }}
-            className="glass glow-edge relative aspect-square w-full rounded-3xl p-3"
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            style={{ perspective: 800 }}
+            className="w-full max-w-[260px] sm:max-w-[280px]"
           >
-            <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-blue-glow/15 to-violet-glow/15">
-              <Image
-                src="/images/anmol.jpg"
-                alt={profile.name}
-                fill
-                sizes="280px"
-                priority
-                className="object-cover"
-              />
-              <span className="absolute inset-0 rounded-2xl border border-white/10 [mask-image:radial-gradient(circle_at_center,black,transparent_75%)]" />
-            </div>
-            <div className="absolute -inset-3 -z-10 animate-spin-slow rounded-[2rem] border border-dashed border-blue-glow/20" />
+            <motion.div
+              style={{ rotateX: springRX, rotateY: springRY }}
+              className="glass glow-edge relative aspect-square w-full rounded-3xl p-3"
+            >
+              <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-blue-glow/15 to-violet-glow/15">
+                <Image
+                  src="/images/anmol.jpg"
+                  alt={profile.name}
+                  fill
+                  sizes="280px"
+                  priority
+                  className="object-cover"
+                />
+                <span className="absolute inset-0 rounded-2xl border border-white/10 [mask-image:radial-gradient(circle_at_center,black,transparent_75%)]" />
+              </div>
+              <div className="absolute -inset-3 -z-10 animate-spin-slow rounded-[2rem] border border-dashed border-blue-glow/20" />
+            </motion.div>
+            <p className="mt-4 text-center font-mono text-xs text-muted">
+              <span className="text-violet-glow">status:</span> available_for_hire
+              <span className="animate-blink text-blue-glow">_</span>
+            </p>
           </motion.div>
-          <p className="mt-4 text-center font-mono text-xs text-muted">
-            <span className="text-violet-glow">status:</span> available_for_hire
-            <span className="animate-blink text-blue-glow">_</span>
-          </p>
-        </motion.div>
+        </div>
       </div>
 
-      <div className="relative z-10 mx-auto -mt-4 mb-4 grid w-full max-w-5xl grid-cols-2 gap-3 px-5 sm:-mt-8 sm:gap-4 sm:grid-cols-4">
+      {/* Desktop-only stats row, full width below both columns */}
+      <div className="relative z-10 mx-auto -mt-2 mb-4 hidden w-full max-w-5xl px-5 md:grid md:grid-cols-4 md:gap-4">
         {stats.map((s) => (
-          <div key={s.label} className="glass rounded-xl px-3 py-3 text-center sm:px-4 sm:py-4">
-            <div className="font-display text-xl font-semibold text-ink sm:text-2xl">
+          <div key={s.label} className="glass rounded-xl px-4 py-4 text-center">
+            <div className="font-display text-2xl font-semibold text-ink">
               {s.value}
               {s.suffix}
             </div>
-            <div className="mt-1 font-mono text-[0.62rem] uppercase tracking-wide text-muted sm:text-[0.68rem]">
+            <div className="mt-1 font-mono text-[0.68rem] uppercase tracking-wide text-muted">
               {s.label}
             </div>
           </div>
